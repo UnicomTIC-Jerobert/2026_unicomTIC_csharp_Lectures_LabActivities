@@ -93,8 +93,4 @@ Think of XAML as the architectural blueprint for your window. C# is the construc
         <Button Content="Click Me" Width="100" Height="30" />
     </Grid>
 </Window>
-```We will spend a lot of time connecting our C# logic to these XAML elements.
-
----
-
-✅ **Goal Check:** Refresh your GitHub repository page. You should now see all your project files (`MyConsoleApp` and `MyWpfApp` folders) listed there. You have successfully version-controlled your first day's work
+```
