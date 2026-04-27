@@ -1,9 +1,3 @@
-Of course. Here are the complete lecture notes and lab activities for Week 1, Day 2, continuing the parallel Console and WPF learning path.
-
-This can be saved as a `README.md` file in a `Week-01/Day-02` folder.
-
-***
-
 # Week 1, Day 2: Conditional Logic in Two Worlds
 
 ## 📖 Lecture Notes (1 Hour)
