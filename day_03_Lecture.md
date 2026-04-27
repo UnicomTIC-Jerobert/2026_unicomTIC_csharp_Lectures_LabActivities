@@ -1,9 +1,3 @@
-Of course. Let's structure Day 3 with the same intensive and engaging format. This day is crucial as it introduces loops, a fundamental concept for handling repetitive tasks and processing data collections.
-
-Here is the complete curriculum for Week 1, Day 3, with detailed lecture notes, 10 lab activities (5 coding topics split between Console/WPF, plus submission), and a comprehensive 20-question quiz.
-
-***
-
 # Week 1, Day 3: Repetition with Loops
 
 ## 📖 Lecture Notes (1 Hour)
