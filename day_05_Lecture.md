@@ -1,9 +1,3 @@
-Of course. A mini-project day is the perfect way to conclude the first week. It solidifies all the foundational concepts by having students apply them to a single, coherent application. This structure transforms the 10 activities into a 10-step guided project, which is an excellent pedagogical approach.
-
-Here is the complete curriculum for Week 1, Day 5, designed to be a capstone for the week's learning.
-
-***
-
 # Week 1, Day 5: Mini-Project Consolidation
 
 ## 📖 Lecture Notes (1 Hour)

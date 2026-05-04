@@ -1,9 +1,3 @@
-Of course. Let's proceed to the next step: **Week 3, Day 2**. Today, we address the primary limitation of arrays by introducing the most commonly used collection in C#: the **Generic List**.
-
-This curriculum follows your established structure, with 1 hour of lecture, a minimum of 7 hands-on lab activities covering Console and WPF, and a comprehensive 20-question quiz.
-
-***
-
 # Week 3, Day 2: Generic List (`List<T>`)
 
 ## 📖 Lecture Notes (1 Hour)

@@ -1,9 +1,3 @@
-Of course. Here is the detailed curriculum for **Week 4, Day 1: Introduction to SQL and Databases**.
-
-This day is intentionally designed to keep C# and SQL separate. By using a visual database tool, students can focus entirely on understanding the structure and language of databases without the added complexity of C# code. This builds a strong foundation for the rest of the week.
-
-***
-
 # Week 4, Day 1: Introduction to SQL and Databases
 
 ## 📖 Lecture Notes (1 Hour)

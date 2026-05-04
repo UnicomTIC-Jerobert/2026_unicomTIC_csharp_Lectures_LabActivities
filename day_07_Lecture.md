@@ -1,9 +1,3 @@
-Of course. Let's proceed to Week 2, Day 2. Today's topic, **Inheritance**, is one of the most powerful concepts in Object-Oriented Programming. It allows us to create new classes that reuse, extend, and modify the behavior defined in other classes.
-
-Here is the curriculum for Week 2, Day 2, following your requested structure.
-
-***
-
 # Week 2, Day 2: Inheritance
 
 ## 📖 Lecture Notes (1 Hour)

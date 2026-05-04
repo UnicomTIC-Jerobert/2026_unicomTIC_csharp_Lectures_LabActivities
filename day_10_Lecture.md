@@ -1,9 +1,3 @@
-Of course. This is the final day of Week 2, which has been dedicated to the core principles of Object-Oriented Programming. Today, we will consolidate everything learned—Encapsulation, Inheritance, Polymorphism, and Interfaces—into a single, comprehensive mini-project.
-
-Here is the complete curriculum for Week 2, Day 5, following the established structure.
-
-***
-
 # Week 2, Day 5: OOP Mini-Project - Zoo Management
 
 ## 📖 Lecture Notes (1 Hour)

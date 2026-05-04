@@ -1,9 +1,3 @@
-Of course. Let's proceed to **Week 3, Day 3**. Today we explore another essential generic collection, the **Dictionary**, which is optimized for incredibly fast lookups using a key-value system.
-
-Here is the complete curriculum following your established structure: 1-hour lecture, a minimum of 7 hands-on lab activities for Console and WPF, and a comprehensive 20-question quiz.
-
-***
-
 # Week 3, Day 3: Dictionaries (`Dictionary<TKey, TValue>`)
 
 ## 📖 Lecture Notes (1 Hour)

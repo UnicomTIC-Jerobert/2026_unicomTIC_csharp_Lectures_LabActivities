@@ -1,9 +1,3 @@
-Of course. Let's proceed to **Week 4, Day 5**. This is the final day of the week and serves as the capstone mini-project, integrating everything learned about databases and the Repository Pattern into a single, polished WPF application.
-
-This curriculum follows the established structure: a 1-hour review and architectural overview, a guided step-by-step mini-project, and a comprehensive weekly review quiz with 20 questions.
-
-***
-
 # Week 4, Day 5: WPF Database Mini-Project
 
 ## 📖 Lecture Notes (1 Hour)

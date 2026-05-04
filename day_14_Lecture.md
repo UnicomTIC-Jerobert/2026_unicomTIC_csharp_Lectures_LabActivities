@@ -1,9 +1,3 @@
-Of course. Let's proceed to **Week 3, Day 4**. Today is dedicated to mastering **LINQ (Language-Integrated Query)**, a powerful and modern way to query and manipulate collections. This will build upon everything learned so far about Arrays, Lists, and Dictionaries.
-
-This curriculum follows your established structure: 1-hour lecture, a minimum of 7 hands-on lab activities, and a comprehensive 20-question quiz.
-
-***
-
 # Week 3, Day 4: LINQ (Language-Integrated Query)
 
 ## 📖 Lecture Notes (1 Hour)
