@@ -69,7 +69,7 @@ using (SqliteCommand command = new SqliteCommand(sql, connection))
     // The driver handles quoting and escaping to prevent injection.
     command.Parameters.AddWithValue("@name", productName);
     command.Parameters.AddWithValue("@price", productPrice);
-    command.Parameters.tock);
+    command.Parameters.AddWithValue("@stock", productStock);
 
     // 3. Execute the command.
     command.ExecuteNonQuery();
