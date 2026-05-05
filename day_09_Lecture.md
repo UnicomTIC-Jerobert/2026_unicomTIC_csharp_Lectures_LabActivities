@@ -75,7 +75,8 @@ foreach (ISavable item in thingsToSave)
 }
 // Output:
 // Saving the document to a file...
-// Saving character stats to the server...```
+// Saving character stats to the server...
+```
 
 ### 5. Key Differences: Interface vs. Abstract Class
 | Feature | Interface | Abstract Class |

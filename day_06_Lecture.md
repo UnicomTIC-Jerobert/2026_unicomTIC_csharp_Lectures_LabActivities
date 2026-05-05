@@ -63,11 +63,46 @@ student2.Name = "Bob";
 student2.StudentID = 102;
 ```
 
-### 5. Constructors: Initializing Objects
+### 5. Encapsulation: Protecting an Object's Data
+Encapsulation means keeping an object's internal data safe and controlling how other code can change it. Instead of making every variable directly accessible, we hide internal details with `private` fields and expose controlled access through public properties or methods.
+
+This matters because objects should protect themselves from invalid data. For example, a bank account balance should not be changed directly to a negative number from outside the class.
+
+```csharp
+public class BankAccount
+{
+    private double balance; // Hidden internal state
+
+    public double Balance
+    {
+        get { return balance; }
+    }
+
+    public void Deposit(double amount)
+    {
+        if (amount <= 0)
+        {
+            Console.WriteLine("Deposit amount must be positive.");
+            return;
+        }
+
+        balance += amount;
+    }
+}
+
+BankAccount account = new BankAccount();
+account.Deposit(100);
+Console.WriteLine(account.Balance); // Output: 100
+```
+
+In this example, other code can read the `Balance`, but it cannot directly assign a new value to `balance`. The only way to change the balance is through `Deposit()`, where the class can validate the input first.
+
+### 6. Constructors: Initializing Objects
 A **constructor** is a special method that runs automatically when you create a new object using the `new` keyword. Its job is to initialize the object's properties to a valid starting state. A constructor has the same name as the class and no return type.
 
 ```csharp
-public class Book{
+public class Book
+{
     public string Title { get; set; }
     public string Author { get; set; }
 
@@ -84,7 +119,7 @@ Book myBook = new Book("The Hobbit", "J.R.R. Tolkien");
 // myBook.Title is already set to "The Hobbit"
 ```
 
-### 6. Application in Console vs. WPF
+### 7. Application in Console vs. WPF
 *   **Console:** In console apps, objects are the "business entities" or the "model" of our application. We create them, manipulate their data, call their methods, and print their information to the screen.
 *   **WPF:** In WPF, objects are the **heart of the application's data**. This is a critical concept. We create an object (the **Model**) and then "bind" its properties to UI elements (the **View**). When a button is clicked, we don't manually change ten `TextBlock`s. Instead, we just load a different `Student` object, and the UI can update itself to reflect that object's state. This separates our logic from our presentation.
 
