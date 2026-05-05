@@ -85,7 +85,28 @@ How we use conditional logic changes slightly based on our application type.
 *   **In Console Apps:** We use `if` statements to control the **flow of text and logic**. We print different messages or call different functions.
 *   **In WPF Apps:** We use `if` statements to control the **state of the UI**. We can change colors, show or hide elements, enable or disable buttons, and display different content. This is a very powerful concept.
 
-### 5. The `switch` Statement (A Cleaner `if-else if`)
+### 5. Creating a WPF Application in Visual Studio
+Before we can write WPF code, we need to create a WPF project. Visual Studio will generate the basic files and folder structure for us.
+
+1.  Open **Visual Studio**.
+2.  Click **Create a new project**.
+3.  Search for **WPF App**.
+4.  Select **WPF App** using **C#**.
+5.  Click **Next**.
+6.  Enter a project name, for example `ConditionalLogicWpfApp`.
+7.  Choose a folder location.
+8.  Select the latest available **.NET** version.
+9.  Click **Create**.
+
+Visual Studio creates two important files:
+*   **`MainWindow.xaml`:** The XAML file where we design the window layout.
+*   **`MainWindow.xaml.cs`:** The C# code-behind file where we write event logic, such as button click code.
+
+To run the application, click **Start** or press **F5**. Visual Studio will build the project and open the WPF window.
+
+If you do not see the WPF project template, open **Visual Studio Installer** and install the **.NET desktop development** workload.
+
+### 6. The `switch` Statement (A Cleaner `if-else if`)
 When you have many `else if` statements checking the *same variable* for different values, a `switch` statement is often cleaner and easier to read.
 
 ```csharp
