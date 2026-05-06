@@ -50,10 +50,20 @@ do
     Console.WriteLine("1. Start Game");
     Console.WriteLine("2. Load Game");
     Console.WriteLine("3. Exit");
-    choice = int.Parse(Console.ReadLine());
+
+    bool isValidNumber = int.TryParse(Console.ReadLine(), out choice);
+    if (!isValidNumber)
+    {
+        Console.WriteLine("Please enter a number.");
+        choice = 0; // Keep the menu running.
+        continue;
+    }
+
     // ... logic to handle choice ...
 } while (choice != 3); // The loop continues until the user chooses to exit.
 ```
+
+`int.Parse()` will crash if the user types text instead of a number. `int.TryParse()` is safer because it returns `false` when the input cannot be converted.
 
 ### 5. Loop Control Statements
 Sometimes you need to change a loop's flow from the inside.

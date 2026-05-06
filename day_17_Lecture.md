@@ -1,11 +1,3 @@
-Of course. Let's proceed to **Week 4, Day 2**.
-
-Today, we bridge the gap between the two worlds we've explored: C# and SQL. Students will learn how to make their C# applications communicate with the SQLite database they created yesterday. The focus is specifically on **reading and retrieving data**, which is the most common database operation.
-
-Here is the complete curriculum following your established structure.
-
-***
-
 # Week 4, Day 2: Connecting C# to SQLite (Reading Data)
 
 ## 📖 Lecture Notes (1 Hour)

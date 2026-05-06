@@ -1,11 +1,3 @@
-Of course. Let's proceed to **Week 4, Day 4**.
-
-Today's focus is on software architecture and design patterns. We will take all the raw ADO.NET code we've written and refactor it into a clean, reusable, and professional structure using the **Repository Pattern**. This is a crucial step in moving from writing scripts to building maintainable applications.
-
-Here is the complete curriculum for Day 4, following the established structure.
-
-***
-
 # Week 4, Day 4: The Repository Pattern
 
 ## 📖 Lecture Notes (1 Hour)

@@ -85,7 +85,28 @@ How we use conditional logic changes slightly based on our application type.
 *   **In Console Apps:** We use `if` statements to control the **flow of text and logic**. We print different messages or call different functions.
 *   **In WPF Apps:** We use `if` statements to control the **state of the UI**. We can change colors, show or hide elements, enable or disable buttons, and display different content. This is a very powerful concept.
 
-### 5. The `switch` Statement (A Cleaner `if-else if`)
+### 5. Creating a WPF Application in Visual Studio
+Before we can write WPF code, we need to create a WPF project. Visual Studio will generate the basic files and folder structure for us.
+
+1.  Open **Visual Studio**.
+2.  Click **Create a new project**.
+3.  Search for **WPF App**.
+4.  Select **WPF App** using **C#**.
+5.  Click **Next**.
+6.  Enter a project name, for example `ConditionalLogicWpfApp`.
+7.  Choose a folder location.
+8.  Select the latest available **.NET** version.
+9.  Click **Create**.
+
+Visual Studio creates two important files:
+*   **`MainWindow.xaml`:** The XAML file where we design the window layout.
+*   **`MainWindow.xaml.cs`:** The C# code-behind file where we write event logic, such as button click code.
+
+To run the application, click **Start** or press **F5**. Visual Studio will build the project and open the WPF window.
+
+If you do not see the WPF project template, open **Visual Studio Installer** and install the **.NET desktop development** workload.
+
+### 6. The `switch` Statement (A Cleaner `if-else if`)
 When you have many `else if` statements checking the *same variable* for different values, a `switch` statement is often cleaner and easier to read.
 
 ```csharp
@@ -115,79 +136,3 @@ switch (userCommand)
 }
 ```
 
----
-
-Of course. Here is the completely revised and expanded curriculum for Week 1, Day 2. It's designed to be intensive, with 7 distinct lab activities and a comprehensive 20-question quiz to solidify the day's concepts on conditional logic.
-
-This is ready to be saved as a `README.md` file in your `Week-01/Day-02` GitHub folder.
-
-***
-
-# Week 1, Day 2: Making Decisions in Code
-
-## 📖 Lecture Notes (1 Hour)
-
-### 1. Review and Introduction
-Yesterday, our programs followed a single, straight path. Today, we give them a brain. We will learn to write code that can analyze situations and make decisions, creating dynamic and intelligent applications. This is called **Conditional Logic**.
-
-### 2. The Core `if-else` Structure
-This is the most fundamental decision-making tool in all of programming.
-
-*   **`if`:** Checks if a condition is **true**. If so, it executes the code block `{}` that follows.
-    ```csharp
-    if (userIsLoggedIn == true) { /* Execute this code */ }
-    ```
-*   **`else`:** Provides an alternative path. If the `if` condition is **false**, the `else` block is executed instead.
-    ```csharp
-    if (userIsLoggedIn == true) { /* ... */ } else { /* Execute this code instead */ }
-    ```
-*   **`else if`:** Lets you chain multiple conditions. The program checks them in order and executes *only the first one* that evaluates to true.
-    ```csharp
-    if (grade >= 90) { /* A */ } 
-    else if (grade >= 80) { /* B */ } 
-    else { /* C or lower */ }
-    ```
-
-### 3. Essential Operators for Building Conditions
-To create meaningful conditions, you need operators.
-
-#### Comparison Operators
-| Operator | Name | Example | Meaning |
-| :--- | :--- | :--- | :--- |
-| `==` | Equal to | `username == "admin"` | Is the username exactly "admin"? |
-| `!=` | Not equal to | `userRole != "guest"` | Is the user role *not* "guest"? |
-| `>` | Greater than | `age > 18` | Is age strictly greater than 18? |
-| `<` | Less than | `price < 50.0` | Is the price less than 50? |
-| `>=` | Greater than or equal to | `score >= 75` | Is the score 75 or more? |
-| `<=` | Less than or equal to | `itemsInCart <= 10` | Are there 10 or fewer items? |
-
-#### Logical Operators
-These are used to combine multiple conditions together.
-
-| Operator | Name | Example | Meaning |
-| :--- | :--- | :--- | :--- |
-| `&&` | AND | `isLoggedIn && hasPermission` | Are *both* conditions true? |
-| `||` | OR | `isStudent || isSenior` | Is *at least one* condition true? |
-| `!` | NOT | `!isCompleted` | Inverts the boolean value (true becomes false, false becomes true). |
-
-### 4. Conditional Logic in WPF: Controlling the UI
-While Console apps use `if` statements to change the flow of text, WPF uses them to change the visual state of the application. This is a critical concept.
-
-```csharp
-if (isError)
-{
-    // Change UI properties to reflect an error state
-    StatusMessage.Text = "Error: Invalid Input!";
-    StatusMessage.Foreground = Brushes.Red;
-    SubmitButton.IsEnabled = false;
-    ErrorMessagePanel.Visibility = Visibility.Visible; // Show a hidden panel
-}
-else
-{
-    // Reset the UI to a normal state
-    SubmitButton.IsEnabled = true;
-    ErrorMessagePanel.Visibility = Visibility.Collapsed; // Hide the panel
-}
-```
-
----

@@ -20,7 +20,24 @@ Today, we will build two different kinds of apps to understand a core concept: *
 | **Primary Use** | Learning pure C# logic, backend services, automation scripts | Rich desktop applications for Windows |
 | **Analogy** | A phone call (pure information) | A video call (information with a visual interface) |
 
-### 3. Core C# Syntax: The Rules of the Language
+### 3. Why We Learn WPF, and Where It Fits
+WPF is useful because it lets us turn C# logic into a real Windows desktop application. Instead of only typing and reading text in a console, students can build screens with buttons, text boxes, labels, lists, and tables. This helps us learn an important idea in software development: the same business logic can be used behind different user interfaces.
+
+WPF also introduces important professional programming ideas:
+*   **Event-driven programming:** Code runs when the user clicks a button, types text, or selects an item.
+*   **Separation of UI and logic:** XAML describes the screen, while C# handles the behavior.
+*   **Data binding:** UI controls can display data from C# objects.
+*   **Desktop application structure:** Students learn how a real Windows application is organized.
+
+However, WPF also has limitations:
+*   **Windows-only:** WPF applications run on Windows desktop, not directly on macOS, Linux, Android, iOS, or the web.
+*   **Not for web applications:** Websites and web APIs are usually built with technologies like ASP.NET Core, Blazor, JavaScript, HTML, and CSS.
+*   **Not the newest UI framework:** Modern .NET also has options like .NET MAUI, WinUI, Blazor, and Avalonia.
+*   **Can feel complex at first:** XAML, events, layouts, and data binding add extra concepts on top of basic C#.
+
+In this course, we use WPF as a learning tool for desktop UI programming. The most important part is still the C# logic. The programming concepts you learn here will also help you later with web apps, APIs, mobile apps, games, and other .NET technologies.
+
+### 4. Core C# Syntax: The Rules of the Language
 
 Every language has grammar, and C# is no different. Here are the first rules you need to know.
 
@@ -45,7 +62,7 @@ public static void Main(string[] args)
 } // The curly braces {} define the start and end of a code block.
 ```
 
-### 4. Variables: Storing Information
+### 5. Variables: Storing Information
 A variable is a container for storing data. You must declare what **type** of data a variable will hold.
 
 | Data Type | Purpose | Example |
@@ -65,7 +82,7 @@ bool isLevelComplete = false;
 userScore = 150; 
 ```
 
-### 5. Getting User Input: The Two Worlds
+### 6. Getting User Input: The Two Worlds
 
 How we get input from a user depends entirely on our app model.
 
@@ -80,7 +97,7 @@ How we get input from a user depends entirely on our app model.
     string name = NameTextBox.Text; // Assumes our TextBox is named "NameTextBox"
     ```
 
-### 6. Introduction to XAML: The Blueprint for Your UI
+### 7. Introduction to XAML: The Blueprint for Your UI
 In WPF, we don't use C# to describe *what the UI looks like*. We use a special language called **XAML** (eXtensible Application Markup Language).
 
 Think of XAML as the architectural blueprint for your window. C# is the construction crew that brings the blueprint to life and makes it interactive.

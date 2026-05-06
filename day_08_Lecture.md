@@ -1,9 +1,3 @@
-Of course. We will now proceed with Week 2, Day 3, focusing on **Polymorphism**. This is arguably the most powerful pillar of Object-Oriented Programming, and it builds directly on yesterday's lesson on inheritance.
-
-The structure remains the same: 1-hour lecture content, a minimum of 7 hands-on lab activities, and a comprehensive 20-question quiz.
-
-***
-
 # Week 2, Day 3: Polymorphism
 
 ## 📖 Lecture Notes (1 Hour)

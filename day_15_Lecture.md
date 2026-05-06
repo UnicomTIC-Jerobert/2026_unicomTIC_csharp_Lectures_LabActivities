@@ -1,9 +1,3 @@
-Of course. Let's proceed to **Week 3, Day 5**. This will be the capstone mini-project for the week, designed to integrate everything the students have learned about Arrays, Lists, Dictionaries, and especially LINQ, into a single, functional application.
-
-This curriculum follows your established structure: 1-hour lecture, a step-by-step guided mini-project, and a comprehensive 20-question weekly review quiz.
-
-***
-
 # Week 3, Day 5: Collections Mini-Project
 
 ## 📖 Lecture Notes (1 Hour)

@@ -1,11 +1,3 @@
-Of course. Let's proceed to **Week 4, Day 3**.
-
-Yesterday, we mastered reading data. Today, we complete the set of core database operations by learning how to **Create, Update, and Delete (CUD)** data from our C# applications. The most critical topic of the day is security: understanding and preventing **SQL Injection attacks** using parameterized queries.
-
-Here is the complete curriculum for Day 3, following the established structure.
-
-***
-
 # Week 4, Day 3: Modifying Data from C# (Create, Update, Delete)
 
 ## 📖 Lecture Notes (1 Hour)
@@ -69,7 +61,7 @@ using (SqliteCommand command = new SqliteCommand(sql, connection))
     // The driver handles quoting and escaping to prevent injection.
     command.Parameters.AddWithValue("@name", productName);
     command.Parameters.AddWithValue("@price", productPrice);
-    command.Parameters.tock);
+    command.Parameters.AddWithValue("@stock", productStock);
 
     // 3. Execute the command.
     command.ExecuteNonQuery();

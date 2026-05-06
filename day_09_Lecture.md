@@ -1,9 +1,3 @@
-Of course. Let's proceed with Week 2, Day 4. Today's topic is **Interfaces**, a concept that works hand-in-hand with polymorphism to create incredibly flexible and decoupled application architectures.
-
-Here is the complete curriculum following your requested structure: 1-hour lecture, 7+ lab activities, and a 20-question quiz.
-
-***
-
 # Week 2, Day 4: Interfaces
 
 ## 📖 Lecture Notes (1 Hour)
@@ -81,7 +75,8 @@ foreach (ISavable item in thingsToSave)
 }
 // Output:
 // Saving the document to a file...
-// Saving character stats to the server...```
+// Saving character stats to the server...
+```
 
 ### 5. Key Differences: Interface vs. Abstract Class
 | Feature | Interface | Abstract Class |

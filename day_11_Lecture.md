@@ -1,9 +1,3 @@
-Excellent. Let's proceed to the next step. We are now entering **Week 3: Collections**, which is dedicated to managing groups of data. Today we start with the most fundamental collection type: **Arrays**.
-
-This curriculum for Week 3, Day 1 follows your established structure precisely, with 1 hour of lecture content, a robust set of 8 lab activities for Console and WPF, and a comprehensive 20-question quiz.
-
-***
-
 # Week 3, Day 1: Arrays
 
 ## 📖 Lecture Notes (1 Hour)
