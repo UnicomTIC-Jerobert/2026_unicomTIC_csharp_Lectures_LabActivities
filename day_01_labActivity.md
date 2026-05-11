@@ -10,23 +10,6 @@ Gain hands-on experience with variable declaration, user input, type conversion,
     2.  **Console Project:** Add a **Console App** named `Day1_Activity1_Console`. Write code to print `Hello from the Console!`.
     3.  **WPF Project:** Add a **WPF App** named `Day1_Activity1_WPF`. Add a `Button` that, when clicked, shows a `MessageBox` with the text `Hello from WPF!`.
 
-Of course! Building on the foundational "Hello World" is the perfect way to introduce more interactive concepts. Here is an expanded activity set designed to teach `MouseEnter`, `MouseLeave`, and `MouseDoubleClick` events, complete with beginner-friendly implementation rules for Visual Studio 2022.
-
----
-
-### **Refreshed C# WPF Activities**
-
-Here is the original activity followed by a new, more detailed one focusing on mouse events.
-
-### **Activity 1 (1 hr): Foundational "Hello Worlds"**
-*   **Concept:** The most basic program execution in both app models.
-*   **Instructions:**
-    1.  Create a new Solution in Visual Studio.
-    2.  **Console Project:** Add a **Console App** named `Day1_Activity1_Console`. Write code to print `Hello from the Console!`.
-    3.  **WPF Project:** Add a **WPF App** named `Day1_Activity1_WPF`. Add a `Button` that, when clicked, shows a `MessageBox` with the text `Hello from WPF!`.
-
----
-
 ### **Activity 1.1 (1.5 hrs): Interactive UI with Mouse Events**
 *   **Concept:** Go beyond a simple click. Learn how to make a WPF application feel alive and responsive by handling different mouse events. We will make a single button react in multiple ways depending on how the user interacts with it.
 *   **Goal:** You will modify the button from Activity 1 to:
