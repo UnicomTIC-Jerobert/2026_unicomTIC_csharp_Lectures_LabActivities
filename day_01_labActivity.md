@@ -169,16 +169,17 @@ This method is faster once you get used to it.
         *   On button click, parse the input, perform the calculation, and display the formatted result in the `TextBlock`.
     3. **Two-Way Temperature Converter**
 
-*   **Concept:** This activity builds on the previous one by creating a more dynamic user experience. You will handle real-time text changes, manage user input safely, and learn how to solve a common problem where two events can trigger each other in an infinite loop.
-*   **Instructions:**
-    2.  **WPF Project:** Create a new WPF project named `Day1_Activity3_WPF`.
-    3.  **Design the UI:**
-        *   Add two `TextBox` controls: one for Celsius and one for Fahrenheit.
-        *   Add corresponding `Label` controls so the user knows which is which.
-    4.  **Implement Two-Way Logic:**
-        *   When the user types a valid number into the **Celsius** box, the **Fahrenheit** box should update instantly with the converted value.
-        *   When the user types a valid number into the **Fahrenheit** box, the **Celsius** box should update instantly with the converted value.
-        *   If the user enters invalid text (like "abc") or clears a `TextBox`, the other `TextBox` should also be cleared.
+        *   **Concept:**
+              This activity builds on the previous one by creating a more dynamic user experience. You will handle real-time text changes, manage user input safely, and learn how to solve a common problem where two events can trigger each other in an infinite loop.
+        *   **Instructions:**
+            1.  **WPF Project:** Create a new WPF project named `Day1_Activity3_WPF`.
+            2.  **Design the UI:**
+                *   Add two `TextBox` controls: one for Celsius and one for Fahrenheit.
+                *   Add corresponding `Label` controls so the user knows which is which.
+            3.  **Implement Two-Way Logic:**
+                *   When the user types a valid number into the **Celsius** box, the **Fahrenheit** box should update instantly with the converted value.
+                *   When the user types a valid number into the **Fahrenheit** box, the **Celsius** box should update instantly with the converted value.
+                *   If the user enters invalid text (like "abc") or clears a `TextBox`, the other `TextBox` should also be cleared.
 
 ### **WPF Implementation**
 
