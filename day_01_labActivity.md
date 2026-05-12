@@ -154,8 +154,19 @@ This method is faster once you get used to it.
         *   Design a UI with three `TextBox`es and a `Button`.
         *   When the button is clicked, read the text from all three boxes.
         *   Display the same formatted "bio" in a `TextBlock` control within the window.
-  
+---
 
+### **Activity 3 (1 hr): Temperature Converter**
+*   **Concept:** Handling `double` variables and applying a mathematical formula. This introduces decimal precision.
+*   **Instructions:**
+    1.  **Console Project:** Create `Day1_Activity3_Console`.
+        *   Prompt the user to enter a temperature in Celsius.
+        *   Read the input and use `double.Parse()` to convert it to a `double`.
+        *   Calculate the temperature in Fahrenheit using the formula: `F = (C * 9 / 5) + 32`.
+        *   Print the result clearly, e.g., `25°C is equal to 77°F.`
+    2.  **WPF Project:** Create `Day1_Activity3_WPF`.
+        *   Design a UI with a `TextBox` for Celsius input, a `Button` to "Convert", and a `TextBlock` for the result.
+        *   On button click, parse the input, perform the calculation, and display the formatted result in the `TextBlock`.
     3. **Two-Way Temperature Converter**
 
 *   **Concept:** This activity builds on the previous one by creating a more dynamic user experience. You will handle real-time text changes, manage user input safely, and learn how to solve a common problem where two events can trigger each other in an infinite loop.
@@ -168,8 +179,6 @@ This method is faster once you get used to it.
         *   When the user types a valid number into the **Celsius** box, the **Fahrenheit** box should update instantly with the converted value.
         *   When the user types a valid number into the **Fahrenheit** box, the **Celsius** box should update instantly with the converted value.
         *   If the user enters invalid text (like "abc") or clears a `TextBox`, the other `TextBox` should also be cleared.
-
----
 
 ### **WPF Implementation**
 
@@ -338,19 +347,7 @@ In the previous version, we might have used `double.Parse()`. This is dangerous 
 #### 4. Formatting the Output
 
 The line `fahrenheitValue.ToString("F2")` is a nice touch. It formats the number as a string with exactly two decimal places (`F2`), making the output look clean and consistent.   
----
-
-### **Activity 3 (1 hr): Temperature Converter**
-*   **Concept:** Handling `double` variables and applying a mathematical formula. This introduces decimal precision.
-*   **Instructions:**
-    1.  **Console Project:** Create `Day1_Activity3_Console`.
-        *   Prompt the user to enter a temperature in Celsius.
-        *   Read the input and use `double.Parse()` to convert it to a `double`.
-        *   Calculate the temperature in Fahrenheit using the formula: `F = (C * 9 / 5) + 32`.
-        *   Print the result clearly, e.g., `25°C is equal to 77°F.`
-    2.  **WPF Project:** Create `Day1_Activity3_WPF`.
-        *   Design a UI with a `TextBox` for Celsius input, a `Button` to "Convert", and a `TextBlock` for the result.
-        *   On button click, parse the input, perform the calculation, and display the formatted result in the `TextBlock`.
+    ---
 
 ### **Activity 4 (1 hr): Simple Calculator**
 *   **Concept:** Reinforcing type conversion and handling multiple numeric inputs for basic arithmetic.
