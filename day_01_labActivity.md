@@ -238,8 +238,6 @@ This XAML uses a `Grid` to create a clean, aligned layout for our labels and tex
 *   Named our text boxes `celsiusTextBox` and `fahrenheitTextBox`.
 *   Crucially, we added the `TextChanged` event to both text boxes. You can use the "Properties -> Events (⚡)" window to generate these, or just type them in the XAML as shown above and let Visual Studio create the methods for you.
 
----
-
 #### **2. The C# Code-Behind (`MainWindow.xaml.cs`)**
 
 This is where the real magic happens. We need to handle the logic and, most importantly, prevent the infinite loop.
@@ -312,8 +310,6 @@ namespace Day1_Activity3_WPF
 }
 ```
 
----
-
 ### **Detailed Implementation Breakdown for Beginners**
 
 #### 1. The Infinite Loop Problem (The Most Important Concept Here!)
@@ -348,7 +344,8 @@ In the previous version, we might have used `double.Parse()`. This is dangerous 
 #### 4. Formatting the Output
 
 The line `fahrenheitValue.ToString("F2")` is a nice touch. It formats the number as a string with exactly two decimal places (`F2`), making the output look clean and consistent.   
-    ---
+    
+---
 
 ### **Activity 4 (1 hr): Simple Calculator**
 *   **Concept:** Reinforcing type conversion and handling multiple numeric inputs for basic arithmetic.
