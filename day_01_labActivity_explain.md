@@ -519,4 +519,225 @@ namespace Day1_Activity4_WPF
 4.  **Handling Specific Errors (Division by Zero)**:
     *   The `DivideButton_Click` method contains an extra `if` statement. Even if the inputs are valid numbers, dividing by zero is a mathematical error that would result in "Infinity".
     *   We catch this specific case and show a user-friendly message, which is much better than displaying a confusing result.
-    
+
+---
+
+
+### **Activity 5 ==> Part 1: Console Application Solution**
+
+This solution guides the user through two separate calculations in a sequence.
+
+#### **Project: `Day1_Activity5_Console`**
+#### **File: `Program.cs`**
+
+```csharp
+using System;
+
+namespace Day1_Activity5_Console
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("--- Shape Area Calculator ---");
+
+            // --- Part 1: Rectangle Area ---
+            Console.WriteLine("\n[1] Calculate the area of a Rectangle");
+            Console.Write("Enter the width: ");
+            // We use double to allow for fractional values like 10.5
+            double width = double.Parse(Console.ReadLine()); 
+
+            Console.Write("Enter the height: ");
+            double height = double.Parse(Console.ReadLine());
+
+            // Calculate the area
+            double rectangleArea = width * height;
+
+            // Display the result
+            Console.WriteLine($"The area of a rectangle with width {width} and height {height} is {rectangleArea}.");
+
+            // --- Part 2: Circle Area ---
+            Console.WriteLine("\n------------------------------------");
+            Console.WriteLine("\n[2] Calculate the area of a Circle");
+            Console.Write("Enter the radius: ");
+            double radius = double.Parse(Console.ReadLine());
+
+            // Calculate the area using the Math.PI constant
+            // Math.PI is a built-in, high-precision value for PI.
+            double circleArea = Math.PI * radius * radius;
+            // You could also use: double circleArea = Math.PI * Math.Pow(radius, 2);
+
+            // Display the result, formatted to 2 decimal places for readability
+            Console.WriteLine($"The area of a circle with radius {radius} is {circleArea:F2}.");
+
+            Console.WriteLine("\nPress any key to exit.");
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**How to Run:**
+1.  Create the console project.
+2.  Paste this code into `Program.cs`.
+3.  Press **F5** to run the application and follow the prompts.
+
+---
+
+### **Activity 5 ==> Part 2: WPF Application Solution**
+
+This solution uses a `TabControl` to create a clean, organized user interface, which is a great pattern for separating different functionalities within the same window.
+
+#### **Project: `Day1_Activity5_WPF`**
+
+#### **1. The XAML (`MainWindow.xaml`)**
+
+This XAML sets up the `TabControl` with two tabs—one for the rectangle and one for the circle. The result `TextBlock` is placed outside and below the tabs so it can be shared by both.
+
+```xml
+<Window x:Class="Day1_Activity5_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day1_Activity5_WPF"
+        mc:Ignorable="d"
+        Title="Shape Area Calculator" Height="350" Width="450">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Row for the tabs -->
+            <RowDefinition Height="*"/>    <!-- Row for the result -->
+        </Grid.RowDefinitions>
+
+        <!-- The TabControl organizes our two calculators -->
+        <TabControl Grid.Row="0" Margin="5">
+            <!-- Rectangle Tab -->
+            <TabItem Header="Rectangle Area">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="Width:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="widthTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                    <Label Content="Height:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="heightTextBox" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                    <Button x:Name="calculateRectangleButton" Content="Calculate Rectangle Area" 
+                            Grid.Row="2" Grid.Column="1" Margin="5" Padding="5" 
+                            Click="CalculateRectangleButton_Click"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Circle Tab -->
+            <TabItem Header="Circle Area">
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="Radius:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="radiusTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
+                    
+                    <Button x:Name="calculateCircleButton" Content="Calculate Circle Area" 
+                            Grid.Row="1" Grid.Column="1" Margin="5" Padding="5" 
+                            Click="CalculateCircleButton_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <!-- The SHARED result area -->
+        <GroupBox Header="Result" Grid.Row="1" Margin="5,10,5,5" FontWeight="Bold">
+            <TextBlock x:Name="resultTextBlock" 
+                       Text="Result appears here..."
+                       FontSize="24"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center" 
+                       VerticalAlignment="Center"/>
+        </GroupBox>
+
+    </Grid>
+</Window>
+```
+
+#### **2. The C# Code-Behind (`MainWindow.xaml.cs`)**
+
+This file contains the logic for the two separate button clicks. Each method validates its own inputs and updates the single, shared `resultTextBlock`.
+
+```csharp
+using System;
+using System.Windows;
+
+namespace Day1_Activity5_WPF
+{
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void CalculateRectangleButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Use TryParse for safe conversion from text to numbers
+            bool isWidthValid = double.TryParse(widthTextBox.Text, out double width);
+            bool isHeightValid = double.TryParse(heightTextBox.Text, out double height);
+
+            // Check if BOTH inputs were valid numbers
+            if (isWidthValid && isHeightValid)
+            {
+                // Perform the calculation
+                double area = width * height;
+                // Update the shared TextBlock with the result, formatted to 2 decimal places
+                resultTextBlock.Text = $"Rectangle Area: {area:F2}";
+            }
+            else
+            {
+                // If either input was invalid, show an error message
+                resultTextBlock.Text = "Error: Please enter valid numbers for width and height.";
+            }
+        }
+
+        private void CalculateCircleButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Use TryParse for safe conversion
+            bool isRadiusValid = double.TryParse(radiusTextBox.Text, out double radius);
+
+            if (isRadiusValid)
+            {
+                // Use the built-in Math.PI constant for accuracy
+                double area = Math.PI * radius * radius;
+                // Update the shared TextBlock with the result
+                resultTextBlock.Text = $"Circle Area: {area:F2}";
+            }
+            else
+            {
+                // If input was invalid, show an error
+                resultTextBlock.Text = "Error: Please enter a valid number for the radius.";
+            }
+        }
+    }
+}
+```
+
+### **Key Concepts in the WPF Solution**
+
+1.  **UI Organization (`TabControl`)**: The `<TabControl>` is an excellent container for separating different but related functions. It keeps the UI clean and prevents it from getting cluttered, as each `<TabItem>` acts like its own mini-window.
+
+2.  **The `Math` Class**: C# provides a built-in static class called `Math` that contains many useful mathematical constants and methods. `Math.PI` gives you a high-precision value for π, and other methods like `Math.Pow()` (for exponents), `Math.Sqrt()` (for square roots), and `Math.Round()` are extremely useful.
+
+3.  **Specific Error Messages**: Notice that the error message for the rectangle is different from the one for the circle. This is good practice. It tells the user exactly *where* the problem is, making the application easier to use.
+
+4.  **Shared UI Elements**: By placing the `resultTextBlock` outside the `TabControl`, both event handlers can access and update it. This is a common pattern for displaying status, results, or logs that are relevant to multiple parts of an application.
