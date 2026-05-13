@@ -294,4 +294,229 @@ In the previous version, we might have used `double.Parse()`. This is dangerous 
 #### 4. Formatting the Output
 
 The line `fahrenheitValue.ToString("F2")` is a nice touch. It formats the number as a string with exactly two decimal places (`F2`), making the output look clean and consistent.   
+
+---
+
+### **Activity 4 ==> Part 1: Console Application Solution**
+
+This solution focuses on the core logic of reading input, converting types, and performing the calculations.
+
+#### **Project: `Day1_Activity4_Console`**
+#### **File: `Program.cs`**
+
+```csharp
+using System;
+
+namespace Day1_Activity4_Console
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("--- Simple Console Calculator ---");
+
+            // --- Get First Number ---
+            Console.Write("Enter the first number: ");
+            string input1 = Console.ReadLine();
+            int number1 = int.Parse(input1); // Convert string to integer
+
+            // --- Get Second Number ---
+            Console.Write("Enter the second number: ");
+            string input2 = Console.ReadLine();
+            int number2 = int.Parse(input2); // Convert string to integer
+
+            // --- Perform Calculations ---
+            int sum = number1 + number2;
+            int difference = number1 - number2;
+            int product = number1 * number2;
+
+            // For the quotient, we must cast one of the numbers to a double
+            // to ensure the result is a decimal, not an integer.
+            // For example, 5 / 2 would be 2 with integer division, but 2.5 with double division.
+            double quotient = (double)number1 / number2;
+
+            // --- Display Results ---
+            Console.WriteLine("\n--- Results ---");
+            Console.WriteLine($"{number1} + {number2} = {sum}");
+            Console.WriteLine($"{number1} - {number2} = {difference}");
+            Console.WriteLine($"{number1} * {number2} = {product}");
+            Console.WriteLine($"{number1} / {number2} = {quotient}");
+
+            Console.WriteLine("\nPress any key to exit.");
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+**How to Run:**
+1.  Create the console project.
+2.  Copy and paste this code into `Program.cs`.
+3.  Press **F5** to run.
+4.  Enter numbers when prompted and see the results.
+
+---
+
+### **Activity 4 ==> Part 2: WPF Application Solution**
+
+This solution involves creating a user interface in XAML and wiring up the C# logic for each button click. We will also include robust error handling.
+
+#### **Project: `Day1_Activity4_WPF`**
+
+#### **1. The XAML (`MainWindow.xaml`)**
+
+This defines the layout of our calculator. We'll use a `Grid` for nice alignment and a `StackPanel` to group the buttons.
+
+```xml
+<Window x:Class="Day1_Activity4_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day1_Activity4_WPF"
+        mc:Ignorable="d"
+        Title="Simple WPF Calculator" Height="300" Width="400">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Input Fields -->
+        <TextBlock Text="Number 1:" Grid.Row="0" Margin="5" VerticalAlignment="Center"/>
+        <TextBox x:Name="number1TextBox" Grid.Row="0" Margin="70,5,5,5" VerticalContentAlignment="Center"/>
+
+        <TextBlock Text="Number 2:" Grid.Row="1" Margin="5" VerticalAlignment="Center"/>
+        <TextBox x:Name="number2TextBox" Grid.Row="1" Margin="70,5,5,5" VerticalContentAlignment="Center"/>
+
+        <!-- Operator Buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+            <Button x:Name="AddButton" Content="+" Width="40" Height="40" FontSize="20" Margin="5" Click="AddButton_Click"/>
+            <Button x:Name="SubtractButton" Content="-" Width="40" Height="40" FontSize="20" Margin="5" Click="SubtractButton_Click"/>
+            <Button x:Name="MultiplyButton" Content="*" Width="40" Height="40" FontSize="20" Margin="5" Click="MultiplyButton_Click"/>
+            <Button x:Name="DivideButton" Content="/" Width="40" Height="40" FontSize="20" Margin="5" Click="DivideButton_Click"/>
+        </StackPanel>
+
+        <!-- Result Display -->
+        <Border Grid.Row="3" BorderBrush="Gray" BorderThickness="1" Margin="5,20,5,5">
+            <TextBlock x:Name="resultTextBlock" 
+                       Text="Result will be shown here" 
+                       FontSize="22" 
+                       FontWeight="Bold" 
+                       TextAlignment="Center" 
+                       VerticalAlignment="Center"/>
+        </Border>
+
+    </Grid>
+</Window>
+```
+
+#### **2. The C# Code-Behind (`MainWindow.xaml.cs`)**
+
+This contains the logic. A key improvement here is creating a helper method (`ParseInputs`) to avoid repeating the input validation code in every button's click event.
+
+```csharp
+using System.Windows;
+
+namespace Day1_Activity4_WPF
+{
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// A helper method to parse the text from the input boxes.
+        /// This avoids repeating the same code in every button click event.
+        /// </summary>
+        /// <param name="num1">The first number, passed by reference.</param>
+        /// <param name="num2">The second number, passed by reference.</param>
+        /// <returns>True if both inputs are valid numbers, otherwise False.</returns>
+        private bool ParseInputs(out double num1, out double num2)
+        {
+            // Set default values
+            num1 = 0;
+            num2 = 0;
+
+            bool isNum1Valid = double.TryParse(number1TextBox.Text, out num1);
+            bool isNum2Valid = double.TryParse(number2TextBox.Text, out num2);
+
+            if (isNum1Valid && isNum2Valid)
+            {
+                return true; // Success!
+            }
+            else
+            {
+                resultTextBlock.Text = "Error: Invalid input.";
+                return false; // Failure
+            }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ParseInputs(out double num1, out double num2))
+            {
+                double result = num1 + num2;
+                resultTextBlock.Text = result.ToString();
+            }
+        }
+
+        private void SubtractButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ParseInputs(out double num1, out double num2))
+            {
+                double result = num1 - num2;
+                resultTextBlock.Text = result.ToString();
+            }
+        }
+
+        private void MultiplyButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ParseInputs(out double num1, out double num2))
+            {
+                double result = num1 * num2;
+                resultTextBlock.Text = result.ToString();
+            }
+        }
+
+        private void DivideButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ParseInputs(out double num1, out double num2))
+            {
+                // Add a specific check for division by zero
+                if (num2 == 0)
+                {
+                    resultTextBlock.Text = "Cannot divide by zero.";
+                    return; // Stop the method here
+                }
+
+                double result = num1 / num2;
+                resultTextBlock.Text = result.ToString();
+            }
+        }
+    }
+}
+```
+
+### **Key Concepts and Implementation Guide for WPF**
+
+1.  **Parsing User Input Safely (`TryParse`)**:
+    *   Instead of `int.Parse()` or `double.Parse()`, we use `double.TryParse()`.
+    *   **Why?** `Parse()` will crash your application if the user types "hello" or leaves the box empty. `TryParse()` will simply return `false` and let your program handle the error gracefully. This is essential for building robust UI applications.
+
+2.  **Avoiding Code Duplication (The Helper Method)**:
+    *   Notice that every button needs to get and validate the two numbers. Instead of writing the `TryParse` logic four times, we created a single helper method: `ParseInputs()`.
+    *   This makes the code cleaner, easier to read, and much easier to maintain. If you need to change the validation logic, you only have to do it in one place.
+
+3.  **The `out` Keyword**:
+    *   The `out` keyword in the `ParseInputs(out double num1, out double num2)` method signature is a way for a method to return multiple values.
+    *   When you call this method, it will put the parsed numbers directly into the `num1` and `num2` variables you provide in the button's click handler.
+
+4.  **Handling Specific Errors (Division by Zero)**:
+    *   The `DivideButton_Click` method contains an extra `if` statement. Even if the inputs are valid numbers, dividing by zero is a mathematical error that would result in "Infinity".
+    *   We catch this specific case and show a user-friendly message, which is much better than displaying a confusing result.
     
