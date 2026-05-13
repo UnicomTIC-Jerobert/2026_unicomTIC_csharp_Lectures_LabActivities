@@ -131,7 +131,7 @@ This method is faster once you get used to it.
 
 ---
 
-### ** Activity 3 : (part3 : WPF Implementation)**
+### **Activity 3 : (part3 : WPF Implementation)**
 
 This consists of two parts: the XAML for the layout and the C# "code-behind" for the logic.
 
